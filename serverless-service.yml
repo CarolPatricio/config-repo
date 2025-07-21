@@ -15,3 +15,12 @@ eureka:
     prefer-ip-address: true
     hostname: serverless-service
     instance-id: ${spring.application.name}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
