@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: serverless-service
+
+server:
+  port: 8003
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: serverless-service
+    instance-id: ${spring.application.name}:${server.port}

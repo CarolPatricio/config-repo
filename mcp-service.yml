@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: mcp-service
+  ai:
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:./mcp-servers-config.json
+        sse:
+          connections:
+            ecommerce:
+              stdio: false
+              url: http://localhost:8081
+              sse-endpoint: /sse
+              sse-message-endpoint: /mcp/messages
+
+server:
+  port: 8001
+
+serverless-service:
+  base-url: http://serverless-service
+ai-service:
+  base-url: http://ai-service
+
+eureka:
+  client:
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
