@@ -15,11 +15,12 @@ spring:
             redis-rate-limiter.replenishRate: 10      
             redis-rate-limiter.burstCapacity: 20      
             redis-rate-limiter.requestedTokens: 1     
-  redis:
-    connect-timeout: 2s
-    host: localhost
-    port: 6379
-    timeout: 1s
+  data:
+    redis:
+      connect-timeout: 2s
+      host: localhost
+      port: 6379
+      timeout: 1s
 
 server:
   port: 8000
