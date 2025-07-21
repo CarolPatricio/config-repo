@@ -20,10 +20,7 @@ spring:
               sse-message-endpoint: /mcp/messages
 
 server:
-  port: 8085  
-
-app:
-  testMessage: "Config carregada do config-repo com sucesso!"
+  port: 8002
 
 eureka:
   instance:
