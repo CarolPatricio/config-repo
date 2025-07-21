@@ -9,6 +9,17 @@ spring:
             locator:
               enabled: true
               lower-case-service-id: true
+      default-filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 10      
+            redis-rate-limiter.burstCapacity: 20      
+            redis-rate-limiter.requestedTokens: 1     
+  redis:
+    connect-timeout: 2s
+    host: localhost
+    port: 6379
+    timeout: 1s
 
 server:
   port: 8000
@@ -30,11 +41,3 @@ management:
   endpoint:
     gateway:
       access: unrestricted
-
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.web.reactive: DEBUG
-    reactor.netty: DEBUG
-    org.springframework.cloud.loadbalancer: DEBUG
-    org.springframework.cloud.netflix.eureka: DEBUG
