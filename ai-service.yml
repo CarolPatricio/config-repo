@@ -18,6 +18,9 @@ spring:
               url: http://localhost:8081
               sse-endpoint: /sse
               sse-message-endpoint: /mcp/messages
+  aop:
+    proxy-target-class: true
+    auto: true
 
 server:
   port: 8002
@@ -38,12 +41,12 @@ resilience4j:
         limitForPeriod: 1
         limitRefreshPeriod: 30s
         timeoutDuration: 0
-        
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-  endpoint:
-    health:
-      show-details: always
+  metrics:
+    enable:
+      resilience4j.ratelimiter.calls: true
