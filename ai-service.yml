@@ -20,7 +20,7 @@ spring:
               sse-message-endpoint: /mcp/messages
 
 server:
-  port: 8002
+  port: 8085
 
 eureka:
   instance:
