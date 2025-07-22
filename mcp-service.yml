@@ -39,15 +39,47 @@ management:
   endpoint:
     health:
       show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
 
 resilience4j:
   circuitbreaker:
     instances:
-      recomendacaoCB:
+      serverlessCB:
         registerHealthIndicator: true
-        slidingWindowSize: 5
-        minimumNumberOfCalls: 3
-        failureRateThreshold: 50
-        waitDurationInOpenState: 2s
-        permittedNumberOfCallsInHalfOpenState: 2
+        slidingWindowSize: 4       
+        minimumNumberOfCalls: 2     
+        failureRateThreshold: 25    
+        waitDurationInOpenState: 3s 
+        permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
+
+      filesystemCB:
+        registerHealthIndicator: true
+        slidingWindowSize: 4
+        minimumNumberOfCalls: 2
+        failureRateThreshold: 25
+        waitDurationInOpenState: 3s
+        permittedNumberOfCallsInHalfOpenState: 1
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+      ecommerceCB:
+        registerHealthIndicator: true
+        slidingWindowSize: 4
+        minimumNumberOfCalls: 2
+        failureRateThreshold: 25
+        waitDurationInOpenState: 3s
+        permittedNumberOfCallsInHalfOpenState: 1
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+      aiCB:
+        registerHealthIndicator: true
+        slidingWindowSize: 4
+        minimumNumberOfCalls: 2
+        failureRateThreshold: 25
+        waitDurationInOpenState: 3s
+        permittedNumberOfCallsInHalfOpenState: 1
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
