@@ -48,5 +48,6 @@ management:
       exposure:
         include: "*"
   metrics:
-    enable:
-      resilience4j.ratelimiter.calls: true
+    export:
+      prometheus:
+        enabled: true
