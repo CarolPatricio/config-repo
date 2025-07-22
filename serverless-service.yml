@@ -24,7 +24,7 @@ management:
   endpoint:
     health:
       show-details: always
-   metrics:
+  metrics:
     export:
       prometheus:
         enabled: true
