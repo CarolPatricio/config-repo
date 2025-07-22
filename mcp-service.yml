@@ -70,7 +70,7 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
-         - org.springframework.web.reactive.function.client.WebClientRequestException
+          - org.springframework.web.reactive.function.client.WebClientRequestException
           - org.springframework.web.reactive.function.client.WebClientResponseException
           - java.net.ConnectException
           - java.net.SocketTimeoutException
