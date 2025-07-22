@@ -42,7 +42,7 @@ management:
   endpoint:
     gateway:
       access: unrestricted
-  metrics:
-    export:
-      prometheus:
+  prometheus:
+    metrics:
+      export:
         enabled: true
