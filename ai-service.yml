@@ -38,8 +38,8 @@ resilience4j:
   ratelimiter:
     instances:
       anthropicRateLimiter:
-        limitForPeriod: 1
-        limitRefreshPeriod: 30s
+        limitForPeriod: 5
+        limitRefreshPeriod: 1m
         timeoutDuration: 0
 
 management:
