@@ -23,7 +23,7 @@ spring:
     auto: true
 
 server:
-  port: 8002
+  port: 8085
 
 eureka:
   instance:
