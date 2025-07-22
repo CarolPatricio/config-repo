@@ -56,9 +56,10 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
+          - org.springframework.web.reactive.function.client.WebClientRequestException
           - org.springframework.web.reactive.function.client.WebClientResponseException
-          - java.io.IOException
-          - java.util.concurrent.TimeoutException
+          - java.net.ConnectException
+          - java.net.SocketTimeoutException
 
       filesystemCB:
         registerHealthIndicator: true
@@ -69,9 +70,10 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
+         - org.springframework.web.reactive.function.client.WebClientRequestException
           - org.springframework.web.reactive.function.client.WebClientResponseException
-          - java.io.IOException
-          - java.util.concurrent.TimeoutException
+          - java.net.ConnectException
+          - java.net.SocketTimeoutException
 
       ecommerceCB:
         registerHealthIndicator: true
@@ -82,9 +84,10 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
+          - org.springframework.web.reactive.function.client.WebClientRequestException
           - org.springframework.web.reactive.function.client.WebClientResponseException
-          - java.io.IOException
-          - java.util.concurrent.TimeoutException
+          - java.net.ConnectException
+          - java.net.SocketTimeoutException
 
       aiCB:
         registerHealthIndicator: true
@@ -95,6 +98,7 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
+          - org.springframework.web.reactive.function.client.WebClientRequestException
           - org.springframework.web.reactive.function.client.WebClientResponseException
-          - java.io.IOException
-          - java.util.concurrent.TimeoutException
+          - java.net.ConnectException
+          - java.net.SocketTimeoutException
