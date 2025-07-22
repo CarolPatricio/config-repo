@@ -52,7 +52,7 @@ resilience4j:
         slidingWindowSize: 4
         minimumNumberOfCalls: 2
         failureRateThreshold: 25
-        waitDurationInOpenState: 3s
+        waitDurationInOpenState: 15s
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
@@ -65,7 +65,7 @@ resilience4j:
         slidingWindowSize: 4
         minimumNumberOfCalls: 2
         failureRateThreshold: 25
-        waitDurationInOpenState: 3s
+        waitDurationInOpenState: 15s
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
@@ -78,7 +78,7 @@ resilience4j:
         slidingWindowSize: 4
         minimumNumberOfCalls: 2
         failureRateThreshold: 25
-        waitDurationInOpenState: 3s
+        waitDurationInOpenState: 15s
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
@@ -91,7 +91,7 @@ resilience4j:
         slidingWindowSize: 4
         minimumNumberOfCalls: 2
         failureRateThreshold: 25
-        waitDurationInOpenState: 3s
+        waitDurationInOpenState: 15s
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
         recordExceptions:
