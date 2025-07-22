@@ -49,12 +49,16 @@ resilience4j:
     instances:
       serverlessCB:
         registerHealthIndicator: true
-        slidingWindowSize: 4       
-        minimumNumberOfCalls: 2     
-        failureRateThreshold: 25    
-        waitDurationInOpenState: 3s 
+        slidingWindowSize: 4
+        minimumNumberOfCalls: 2
+        failureRateThreshold: 25
+        waitDurationInOpenState: 3s
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
+        recordExceptions:
+          - org.springframework.web.reactive.function.client.WebClientResponseException
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
 
       filesystemCB:
         registerHealthIndicator: true
@@ -64,6 +68,10 @@ resilience4j:
         waitDurationInOpenState: 3s
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
+        recordExceptions:
+          - org.springframework.web.reactive.function.client.WebClientResponseException
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
 
       ecommerceCB:
         registerHealthIndicator: true
@@ -73,6 +81,10 @@ resilience4j:
         waitDurationInOpenState: 3s
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
+        recordExceptions:
+          - org.springframework.web.reactive.function.client.WebClientResponseException
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
 
       aiCB:
         registerHealthIndicator: true
@@ -82,4 +94,7 @@ resilience4j:
         waitDurationInOpenState: 3s
         permittedNumberOfCallsInHalfOpenState: 1
         automaticTransitionFromOpenToHalfOpenEnabled: true
-
+        recordExceptions:
+          - org.springframework.web.reactive.function.client.WebClientResponseException
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
